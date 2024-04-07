@@ -60,7 +60,7 @@ export default function Footer() {
 						<Link
 							className='flex gap-2 items-center hover:text-primary transition-all duration-200'
 							target='_blank'
-							href='https://www.linkedin.com/in/aditya-tripathi-at04'
+							href='https://instagram.com/i_adityatripathi2412'
 						>
 							<Image
 								alt='Instagram'
