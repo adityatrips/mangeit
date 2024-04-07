@@ -14,7 +14,7 @@ export default function Footer() {
 
 	return (
 		<footer>
-			<div className='flex justify-around items-center p-5 h-64 border-t border-muted border-b'>
+			<div className='flex flex-row md:flex-col justify-around items-center p-5 h-64 border-t border-muted border-b'>
 				<div>
 					<h2 className='uppercase font-bold'>Sitemap</h2>
 					<ul>
@@ -22,9 +22,14 @@ export default function Footer() {
 							<Link href='/'>Home</Link>
 						</li>
 						{loggedInState.get() ? (
-							<li>
-								<Link href='/dashboard'>Dashboard</Link>
-							</li>
+							<>
+								<li>
+									<Link href='/dashboard'>Dashboard</Link>
+								</li>
+								<li>
+									<Link href='/create'>Create</Link>
+								</li>
+							</>
 						) : (
 							<li>
 								<Link href='/authenticate'>About</Link>
