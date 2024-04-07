@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--text: #080b1c;
+		--background: #ebecf9;
+		--primary: #1b2b64;
+		--secondary: #dc7faa;
+		--accent: #c03935;
+	}
+	.dark {
+		--text: #e2e6f7;
+		--background: #060714;
+		--primary: #626d94;
+		--secondary: #7e234e;
+		--accent: #ca433f;
+	}
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 0.75rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	border: 1px solid var(--secondary);
+	border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	@apply bg-primary;
+	border-radius: 10px;
+	transition: 0.2s all ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-secondary;
+	transition: 0.2s all ease-in-out;
+}
+
+Link {
+	@apply font-sans;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-heading uppercase;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
