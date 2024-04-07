@@ -1,4 +1,4 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
+t# Sample workflow for building and deploying a Next.js site to GitHub Pages
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
@@ -76,8 +76,8 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
-          MONGO: ${{ MONGO }}
-          TOKEN_SECRET: ${{ TOKEN_SECRET }}
+          MONGO: ${{ secrets.MONGO }}
+          TOKEN_SECRET: ${{ secrets.TOKEN_SECRET }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
