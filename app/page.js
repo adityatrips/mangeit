@@ -4,19 +4,19 @@ import React, { useEffect } from 'react';
 import { getDataFromToken } from './_util/getDataFromToken';
 import { useHookstate } from '@hookstate/core';
 import { isLoggedIn, tokenId } from './_util/globalState';
-import isAuth from './_util/isAuth';
 
 const HomePage = () => {
 	const loggedInState = useHookstate(isLoggedIn);
+	const tokenIdState = useHookstate(tokenId);
 
 	useEffect(() => {
 		getDataFromToken().then((data) => {
 			if (data !== '') {
 				loggedInState.set(true);
-				tokenId.set(data);
+				tokenIdState.set(data);
 			} else {
 				loggedInState.set(false);
-				tokenId.set('');
+				tokenIdState.set('');
 			}
 		});
 	}, []);

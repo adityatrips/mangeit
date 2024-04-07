@@ -3,8 +3,8 @@
 import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
 
-export const getDataFromToken = async () => {
-	const token = cookies().get('token')?.value;
+export const getDataFromToken = () => {
+	const token = cookies().get('token')?.value || '';
 
 	if (!token) {
 		return '';

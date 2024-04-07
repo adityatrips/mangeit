@@ -14,9 +14,10 @@ export default function Navbar() {
 	const sidebarRef = useRef();
 
 	const signOut = async () => {
-		const res = await axios.get('/api/auth/logout');
-		isLoggedIn.set(false);
-		router.push('/');
+		const res = await axios.get('/api/auth/logout').then(() => {
+			isLoggedIn.set(false);
+			router.push('/');
+		});
 	};
 
 	const toggleSidebar = () => {

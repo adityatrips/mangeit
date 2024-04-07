@@ -5,6 +5,8 @@ import Navbar from './_components/Navbar';
 import Footer from './_components/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { isLoggedIn } from './_util/globalState';
+import { useHookstate } from '@hookstate/core';
 
 const rubik = Rubik({
 	subsets: ['latin'],

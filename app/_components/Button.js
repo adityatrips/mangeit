@@ -12,6 +12,7 @@ const Button = ({
 	children = 'Oops, no button text!',
 	style,
 	props,
+	disabled,
 	className,
 }) => {
 	const [variantClassName, setVariantClassName] = React.useState('');
@@ -35,7 +36,7 @@ const Button = ({
 
 	return (
 		<button
-			{...props}
+			disabled={disabled}
 			onClick={() => {
 				if (redirectTo) {
 					router.push(redirectTo);
