@@ -9,6 +9,7 @@ import moment from 'moment';
 import { useHookstate } from '@hookstate/core';
 import { isLoggedIn, tokenId } from '../_util/globalState';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const DashboardPage = () => {
 	const [todos, setTodos] = React.useState([]);
@@ -16,6 +17,7 @@ const DashboardPage = () => {
 	const [token, setToken] = React.useState('');
 	const loggedInState = useHookstate(isLoggedIn);
 	const tokenIdState = useHookstate(tokenId);
+	const router = useRouter();
 
 	const getTodos = async () => {
 		try {
@@ -42,9 +44,8 @@ const DashboardPage = () => {
 			getTodos(token);
 			return response.data._id;
 		} else {
-			redirect('/authenticate');
 			loggedInState.set(false);
-			return '';
+			router.push('/unauthorized');
 		}
 	};
 

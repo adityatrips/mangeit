@@ -68,33 +68,30 @@ export default function Navbar() {
 				className='-left-full transition-all duration-300 fixed md:hidden top-16 header w-[75vw] bg-background border-r border-muted h-[calc(100vh-4rem)]'
 				ref={sidebarRef}
 			>
-				<ul className='flex flex-col justify-center items-center'>
-					<li className='py-5 hover:bg-primary hover:text-text cursor-pointer w-full text-center transition-all duration-200'>
-						<Link
-							onClick={toggleSidebar}
-							href='/'
-						>
-							Home
-						</Link>
-					</li>
+				<div className='flex flex-col justify-center items-center'>
+					<Link
+						onClick={toggleSidebar}
+						className='py-5 hover:bg-primary hover:text-text cursor-pointer w-full text-center transition-all duration-200'
+						href='/'
+					>
+						Home
+					</Link>
 					{loggedInState.get() ? (
 						<>
-							<li className='py-5 hover:bg-primary hover:text-text cursor-pointer w-full text-center transition-all duration-200'>
-								<Link
-									onClick={toggleSidebar}
-									href='/dashboard'
-								>
-									Dashboard
-								</Link>
-							</li>
-							<li className='py-5 hover:bg-primary hover:text-text cursor-pointer w-full text-center transition-all duration-200'>
-								<Link
-									onClick={toggleSidebar}
-									href='/create'
-								>
-									Create
-								</Link>
-							</li>
+							<Link
+								onClick={toggleSidebar}
+								className='py-5 hover:bg-primary hover:text-text cursor-pointer w-full text-center transition-all duration-200'
+								href='/dashboard'
+							>
+								Dashboard
+							</Link>
+							<Link
+								onClick={toggleSidebar}
+								className='py-5 hover:bg-primary hover:text-text cursor-pointer w-full text-center transition-all duration-200'
+								href='/create'
+							>
+								Create
+							</Link>
 							<Button
 								className={'my-5'}
 								onClick={() => signOut()}
@@ -103,16 +100,15 @@ export default function Navbar() {
 							</Button>
 						</>
 					) : (
-						<li className='py-5 hover:bg-primary hover:text-text cursor-pointer w-full text-center transition-all duration-200'>
-							<Link
-								onClick={toggleSidebar}
-								href='/authenticate'
-							>
-								Authenticate
-							</Link>
-						</li>
+						<Link
+							onClick={toggleSidebar}
+							className='py-5 hover:bg-primary hover:text-text cursor-pointer w-full text-center transition-all duration-200'
+							href='/authenticate'
+						>
+							Authenticate
+						</Link>
 					)}
-				</ul>
+				</div>
 			</div>
 		</>
 	);

@@ -14,8 +14,8 @@ export default function Footer() {
 
 	return (
 		<footer>
-			<div className='flex flex-row md:flex-col justify-around items-center p-5 h-64 border-t border-muted border-b'>
-				<div>
+			<div className='flex md:flex-row flex-col justify-around items-center p-5 min-h-64 border-t border-muted md:border-b'>
+				<div className='flex flex-col justify-center items-center md:items-start'>
 					<h2 className='uppercase font-bold'>Sitemap</h2>
 					<ul>
 						<li>
@@ -37,7 +37,7 @@ export default function Footer() {
 						)}
 					</ul>
 				</div>
-				<div>
+				<div className='flex flex-col justify-center items-center md:items-start'>
 					<h2 className='uppercase font-bold'>Contact Me</h2>
 					<div className='flex flex-col'>
 						<Link

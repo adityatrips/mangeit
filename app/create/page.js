@@ -5,7 +5,7 @@ import Button from '../_components/Button';
 import axios from 'axios';
 import { getDataFromToken } from '../_util/getDataFromToken';
 import { toast } from 'react-toastify';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useHookstate } from '@hookstate/core';
 import { isLoggedIn, tokenId } from '../_util/globalState';
 
@@ -46,7 +46,7 @@ const CreatePage = () => {
 			tokenIdState.set(response.data._id);
 			loggedInState.set(true);
 		} else {
-			return redirect('/authenticate');
+			return router.push('/unauthorized');
 		}
 	};
 
