@@ -29,7 +29,6 @@ function AuthPage() {
 
 			setLoading(true);
 			const response = await axios.post('/api/auth/register', user);
-			router.push('/login');
 		} catch (error) {
 			toast.error('Registration failed');
 		} finally {
