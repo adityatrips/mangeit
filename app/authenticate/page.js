@@ -29,6 +29,8 @@ function AuthPage() {
 
 			setLoading(true);
 			const response = await axios.post('/api/auth/register', user);
+			toast.success("Registered successfully");
+			setSelectedWindow("register");
 		} catch (error) {
 			toast.error('Registration failed');
 		} finally {
